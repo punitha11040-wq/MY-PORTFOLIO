@@ -1,0 +1,826 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Punitha | Software Developer Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'DM Sans',sans-serif;
+    background:#06070b;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#6c3cff;
+    filter:blur(180px);
+    opacity:.22;
+    top:-150px;
+    left:-150px;
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#00d9ff;
+    filter:blur(180px);
+    opacity:.15;
+    right:-150px;
+    bottom:-100px;
+    z-index:-2;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:18px;
+    left:50%;
+    transform:translateX(-50%);
+    width:90%;
+    max-width:1100px;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(15,16,25,.72);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:18px;
+    z-index:1000;
+}
+
+.logo{
+    font-family:'Space Grotesk';
+    font-size:23px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#8b6cff;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav a{
+    color:#bbb;
+    text-decoration:none;
+    transition:.3s;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:white;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    align-items:center;
+    gap:50px;
+    max-width:1100px;
+    margin:auto;
+    padding:130px 30px 70px;
+}
+
+.badge{
+    display:inline-block;
+    padding:9px 15px;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:30px;
+    background:rgba(255,255,255,.05);
+    color:#aaa;
+    font-size:13px;
+    margin-bottom:25px;
+}
+
+.badge span{
+    color:#52ff9b;
+}
+
+h1{
+    font-family:'Space Grotesk';
+    font-size:clamp(48px,7vw,82px);
+    line-height:1;
+    margin-bottom:25px;
+}
+
+.gradient{
+    background:linear-gradient(90deg,#fff,#8d6cff,#00d9ff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    color:#9c9daa;
+    font-size:17px;
+    line-height:1.8;
+    max-width:600px;
+}
+
+.buttons{
+    margin-top:35px;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 24px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.primary{
+    background:linear-gradient(135deg,#7657ff,#00bfff);
+    color:white;
+}
+
+.secondary{
+    border:1px solid #292a35;
+    color:white;
+    background:#11121a;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+}
+
+/* CODE CARD */
+.code-card{
+    background:#101119;
+    border:1px solid #292b39;
+    border-radius:22px;
+    padding:25px;
+    box-shadow:0 30px 80px rgba(0,0,0,.5);
+    transform:rotate(2deg);
+    transition:.5s;
+}
+
+.code-card:hover{
+    transform:rotate(0deg) translateY(-10px);
+}
+
+.dots{
+    display:flex;
+    gap:7px;
+    margin-bottom:25px;
+}
+
+.dots i{
+    width:11px;
+    height:11px;
+    border-radius:50%;
+    background:#444;
+}
+
+.code{
+    font-family:monospace;
+    color:#bfc2d0;
+    line-height:2;
+    font-size:14px;
+}
+
+.keyword{color:#c792ea}
+.name{color:#82aaff}
+.string{color:#c3e88d}
+.blue{color:#89ddff}
+
+/* SECTIONS */
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:100px 30px;
+}
+
+.section-title{
+    margin-bottom:50px;
+}
+
+.section-title small{
+    color:#8067ff;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.section-title h2{
+    font-family:'Space Grotesk';
+    font-size:45px;
+    margin-top:10px;
+}
+
+/* ABOUT */
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.card{
+    background:rgba(17,18,27,.75);
+    border:1px solid #252633;
+    border-radius:20px;
+    padding:30px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#6350d9;
+}
+
+.card h3{
+    font-family:'Space Grotesk';
+    font-size:23px;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#9698a5;
+    line-height:1.8;
+}
+
+/* SKILLS */
+.skills{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.skill{
+    background:#11121a;
+    border:1px solid #252633;
+    padding:22px;
+    border-radius:16px;
+}
+
+.skill-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:12px;
+}
+
+.bar{
+    height:7px;
+    background:#242531;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress{
+    height:100%;
+    border-radius:20px;
+    background:linear-gradient(90deg,#7657ff,#00d9ff);
+}
+
+/* PROJECTS */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.project{
+    padding:28px;
+    min-height:240px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.project-number{
+    color:#6551dd;
+    font-size:13px;
+}
+
+.project h3{
+    font-family:'Space Grotesk';
+    font-size:25px;
+    margin:18px 0 10px;
+}
+
+.project p{
+    color:#9294a1;
+    line-height:1.6;
+}
+
+.tags{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.tags span{
+    font-size:12px;
+    padding:6px 10px;
+    background:#1b1c27;
+    border-radius:20px;
+    color:#aaa;
+}
+
+/* JOURNEY */
+.timeline{
+    border-left:2px solid #292a36;
+    padding-left:30px;
+}
+
+.timeline-item{
+    position:relative;
+    margin-bottom:45px;
+}
+
+.timeline-item::before{
+    content:"";
+    position:absolute;
+    width:12px;
+    height:12px;
+    background:#8067ff;
+    border-radius:50%;
+    left:-37px;
+    top:5px;
+    box-shadow:0 0 20px #8067ff;
+}
+
+.timeline-item span{
+    color:#8067ff;
+    font-size:13px;
+}
+
+.timeline-item h3{
+    font-family:'Space Grotesk';
+    font-size:23px;
+    margin:8px 0;
+}
+
+.timeline-item p{
+    color:#9294a1;
+}
+
+/* CONTACT */
+.contact{
+    text-align:center;
+    background:linear-gradient(135deg,rgba(109,74,255,.15),rgba(0,217,255,.08));
+    border:1px solid #292a39;
+    border-radius:30px;
+    padding:70px 30px;
+}
+
+.contact h2{
+    font-family:'Space Grotesk';
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.contact p{
+    color:#999;
+    margin-bottom:30px;
+}
+
+.email{
+    color:#8f78ff;
+    text-decoration:none;
+    font-size:17px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:35px;
+    border-top:1px solid #1e1f29;
+    color:#777;
+    font-size:14px;
+}
+
+footer span{
+    color:#8067ff;
+}
+
+/* ANIMATION */
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:1s;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:850px){
+
+    nav{
+        width:94%;
+    }
+
+    nav ul{
+        display:none;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        padding-top:150px;
+    }
+
+    .code-card{
+        transform:none;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .skills{
+        grid-template-columns:1fr;
+    }
+
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+    .section-title h2{
+        font-size:35px;
+    }
+
+    .contact h2{
+        font-size:35px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">Punitha<span>.</span></div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+
+<!-- HERO -->
+<div class="hero" id="home">
+
+    <div class="reveal">
+
+        <div class="badge">
+            <span>●</span> Available for learning & collaboration
+        </div>
+
+        <h1>
+            Hi, I'm <span class="gradient">Punitha.</span><br>
+            I build things<br>
+            with <span class="gradient">code.</span>
+        </h1>
+
+        <p>
+            I'm a first-year Information Technology student passionate about
+            software development, modern websites and creative technology.
+            My goal is to become a professional Software Developer.
+        </p>
+
+        <div class="buttons">
+            <a href="#projects" class="btn primary">View My Work →</a>
+            <a href="#contact" class="btn secondary">Let's Connect</a>
+        </div>
+
+    </div>
+
+
+    <div class="code-card reveal">
+
+        <div class="dots">
+            <i></i><i></i><i></i>
+        </div>
+
+        <div class="code">
+            <span class="keyword">const</span>
+            <span class="name">developer</span> = {<br>
+
+            &nbsp;&nbsp; name:
+            <span class="string">"Punitha"</span>,<br>
+
+            &nbsp;&nbsp; field:
+            <span class="string">"Information Technology"</span>,<br>
+
+            &nbsp;&nbsp; goal:
+            <span class="string">"Software Developer"</span>,<br>
+
+            &nbsp;&nbsp; passion:
+            <span class="string">"Building"</span>,<br>
+
+            &nbsp;&nbsp; learning:
+            <span class="blue">true</span><br>
+
+            };
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+    <div class="section-title reveal">
+        <small>01 — About Me</small>
+        <h2>Who I am</h2>
+    </div>
+
+    <div class="about">
+
+        <div class="card reveal">
+            <h3>My Story</h3>
+            <p>
+                I'm Punitha, a first-year Information Technology student
+                at Mount Zion College, Pudukkottai. I enjoy learning
+                programming, designing websites and exploring new
+                technologies.
+            </p>
+        </div>
+
+        <div class="card reveal">
+            <h3>My Vision</h3>
+            <p>
+                My ambition is to become a skilled Software Developer.
+                I believe consistent learning, creativity and practical
+                projects are the foundation for building a successful
+                career in technology.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+
+    <div class="section-title reveal">
+        <small>02 — Skills</small>
+        <h2>What I work with</h2>
+    </div>
+
+    <div class="skills">
+
+        <div class="skill reveal">
+            <div class="skill-top">
+                <span>HTML</span>
+                <span>90%</span>
+            </div>
+            <div class="bar">
+                <div class="progress" style="width:90%"></div>
+            </div>
+        </div>
+
+        <div class="skill reveal">
+            <div class="skill-top">
+                <span>CSS</span>
+                <span>85%</span>
+            </div>
+            <div class="bar">
+                <div class="progress" style="width:85%"></div>
+            </div>
+        </div>
+
+        <div class="skill reveal">
+            <div class="skill-top">
+                <span>JavaScript</span>
+                <span>70%</span>
+            </div>
+            <div class="bar">
+                <div class="progress" style="width:70%"></div>
+            </div>
+        </div>
+
+        <div class="skill reveal">
+            <div class="skill-top">
+                <span>Python</span>
+                <span>65%</span>
+            </div>
+            <div class="bar">
+                <div class="progress" style="width:65%"></div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects">
+
+    <div class="section-title reveal">
+        <small>03 — Projects</small>
+        <h2>Things I'm building</h2>
+    </div>
+
+    <div class="projects">
+
+        <div class="card project reveal">
+            <div>
+                <span class="project-number">PROJECT 01</span>
+                <h3>Personal Portfolio</h3>
+                <p>
+                    A modern responsive portfolio website designed
+                    to showcase my skills, journey and projects.
+                </p>
+            </div>
+
+            <div class="tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+        </div>
+
+
+        <div class="card project reveal">
+            <div>
+                <span class="project-number">PROJECT 02</span>
+                <h3>Student Management</h3>
+                <p>
+                    A future project concept for managing student
+                    information using programming and database concepts.
+                </p>
+            </div>
+
+            <div class="tags">
+                <span>Python</span>
+                <span>Database</span>
+            </div>
+        </div>
+
+
+        <div class="card project reveal">
+            <div>
+                <span class="project-number">PROJECT 03</span>
+                <h3>Future Project</h3>
+                <p>
+                    More creative applications and software projects
+                    will be added as I continue my development journey.
+                </p>
+            </div>
+
+            <div class="tags">
+                <span>Learning</span>
+                <span>Building</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- JOURNEY -->
+<section id="journey">
+
+    <div class="section-title reveal">
+        <small>04 — Journey</small>
+        <h2>My journey so far</h2>
+    </div>
+
+    <div class="timeline">
+
+        <div class="timeline-item reveal">
+            <span>2026 — PRESENT</span>
+            <h3>Information Technology Student</h3>
+            <p>
+                Mount Zion College, Pudukkottai
+            </p>
+        </div>
+
+        <div class="timeline-item reveal">
+            <span>NEXT CHAPTER</span>
+            <h3>Software Developer</h3>
+            <p>
+                Learning, building projects and preparing for a
+                professional career in software development.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+
+    <div class="contact reveal">
+
+        <h2>Let's build something.</h2>
+
+        <p>
+            Have an idea, project or opportunity?
+            I'd love to connect and learn together.
+        </p>
+
+        <a class="btn primary"
+           href="mailto:punitha11040@mountzion.ac.in">
+           Contact Me →
+        </a>
+
+        <br><br>
+
+        <a class="email"
+           href="mailto:punitha11040@mountzion.ac.in">
+           punitha11040@mountzion.ac.in
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+    Designed & built by <span>Punitha</span> © 2026
+</footer>
+
+
+<script>
+
+/* SCROLL ANIMATION */
+
+const elements = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+},{
+    threshold:0.15
+});
+
+elements.forEach(element=>{
+    observer.observe(element);
+});
+
+
+/* MOUSE EFFECT */
+
+document.addEventListener("mousemove",(e)=>{
+
+    const x = (e.clientX / window.innerWidth - .5) * 10;
+    const y = (e.clientY / window.innerHeight - .5) * 10;
+
+    const card = document.querySelector(".code-card");
+
+    if(card && window.innerWidth > 850){
+        card.style.transform =
+        `rotate(2deg) translate(${x}px,${y}px)`;
+    }
+
+});
+
+</script>
+
+</body>
+</html>
+```
