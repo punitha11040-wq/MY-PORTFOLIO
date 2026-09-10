@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
+{
     margin:0;
     padding:0;
     box-sizing:border-box;
@@ -24,7 +24,7 @@ body{
     overflow-x:hidden;
 }
 
-/* BACKGROUND */
+
 body::before{
     content:"";
     position:fixed;
@@ -51,7 +51,6 @@ body::after{
     z-index:-2;
 }
 
-/* NAVBAR */
 nav{
     position:fixed;
     top:18px;
@@ -97,7 +96,7 @@ nav a:hover{
     color:white;
 }
 
-/* HERO */
+
 .hero{
     min-height:100vh;
     display:grid;
@@ -175,7 +174,7 @@ h1{
     box-shadow:0 15px 35px rgba(0,0,0,.3);
 }
 
-/* CODE CARD */
+
 .code-card{
     background:#101119;
     border:1px solid #292b39;
@@ -238,7 +237,7 @@ section{
     margin-top:10px;
 }
 
-/* ABOUT */
+
 .about{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -269,7 +268,7 @@ section{
     line-height:1.8;
 }
 
-/* SKILLS */
+
 .skills{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -302,7 +301,7 @@ section{
     background:linear-gradient(90deg,#7657ff,#00d9ff);
 }
 
-/* PROJECTS */
+
 .projects{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -348,7 +347,7 @@ section{
     color:#aaa;
 }
 
-/* JOURNEY */
+
 .timeline{
     border-left:2px solid #292a36;
     padding-left:30px;
@@ -386,7 +385,7 @@ section{
     color:#9294a1;
 }
 
-/* CONTACT */
+
 .contact{
     text-align:center;
     background:linear-gradient(135deg,rgba(109,74,255,.15),rgba(0,217,255,.08));
@@ -412,7 +411,7 @@ section{
     font-size:17px;
 }
 
-/* FOOTER */
+
 footer{
     text-align:center;
     padding:35px;
@@ -425,7 +424,7 @@ footer span{
     color:#8067ff;
 }
 
-/* ANIMATION */
+
 .reveal{
     opacity:0;
     transform:translateY(35px);
@@ -437,7 +436,7 @@ footer span{
     transform:translateY(0);
 }
 
-/* MOBILE */
+
 @media(max-width:850px){
 
     nav{
@@ -482,7 +481,7 @@ footer span{
 
 <body>
 
-<!-- NAVBAR -->
+
 <nav>
     <div class="logo">Punitha<span>.</span></div>
 
@@ -497,7 +496,7 @@ footer span{
 </nav>
 
 
-<!-- HERO -->
+
 <div class="hero" id="home">
 
     <div class="reveal">
@@ -559,7 +558,7 @@ footer span{
 </div>
 
 
-<!-- ABOUT -->
+
 <section id="about">
 
     <div class="section-title reveal">
@@ -594,7 +593,7 @@ footer span{
 </section>
 
 
-<!-- SKILLS -->
+
 <section id="skills">
 
     <div class="section-title reveal">
@@ -649,7 +648,7 @@ footer span{
 </section>
 
 
-<!-- PROJECTS -->
+
 <section id="projects">
 
     <div class="section-title reveal">
@@ -715,7 +714,7 @@ footer span{
 </section>
 
 
-<!-- JOURNEY -->
+
 <section id="journey">
 
     <div class="section-title reveal">
@@ -747,7 +746,7 @@ footer span{
 </section>
 
 
-<!-- CONTACT -->
+
 <section id="contact">
 
     <div class="contact reveal">
@@ -776,7 +775,7 @@ footer span{
 </section>
 
 
-<!-- FOOTER -->
+
 <footer>
     Designed & built by <span>Punitha</span> © 2026
 </footer>
@@ -784,7 +783,7 @@ footer span{
 
 <script>
 
-/* SCROLL ANIMATION */
+
 
 const elements = document.querySelectorAll(".reveal");
 
@@ -803,7 +802,7 @@ elements.forEach(element=>{
 });
 
 
-/* MOUSE EFFECT */
+
 
 document.addEventListener("mousemove",(e)=>{
 
